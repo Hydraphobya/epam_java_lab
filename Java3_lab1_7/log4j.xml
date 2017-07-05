@@ -4,14 +4,16 @@
 	<appender name="Console" class="org.apache.log4j.ConsoleAppender">
 		<layout class="org.apache.log4j.SimpleLayout"/>
 	</appender>
-	<appender name="TxtAppender" class="org.apache.log4j.FileAppender">
+	<appender name="TxtAppender" class="org.apache.log4j.RollingFileAppender">
 		<param name="File" value="logs/FirstProject.txt" />
-		<param name="DatePattern" value=".yyyy-MM-dd" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="MaxFileSize" value="5KB" />
 		<layout class="org.apache.log4j.SimpleLayout" />
 	</appender>
 	<root>
-		<priority value="debug"/>
+		<priority value="info"/>
 		<appender-ref ref="Console" />
 		<appender-ref ref="TxtAppender" />
 	</root>
+	
 </log4j:configuration>

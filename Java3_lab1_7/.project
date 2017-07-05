@@ -3,6 +3,7 @@
 	<name>Java3_lab1_7</name>
 	<comment></comment>
 	<projects>
+		<project>RemoteSystemsTempFiles</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

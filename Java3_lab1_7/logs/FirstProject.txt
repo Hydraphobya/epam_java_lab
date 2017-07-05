@@ -1,0 +1,16 @@
+INFO - Test failed with the exception: java.lang.AssertionError: The total number of rows is wrong:  expected:<5> but was:<0>
+INFO - Test finished: readFromNonExistingFileTest
+INFO - Test results: 
+ execution time - 428 ms; 
+ tests number - 2; 
+ failed tests number - 1; 
+ ignored tests number - 0; 
+ 
+INFO - Test started:readRawDataTest
+INFO - Test finished: readRawDataTest
+INFO - Test results: 
+ execution time - 274 ms; 
+ tests number - 1; 
+ failed tests number - 0; 
+ ignored tests number - 0; 
+ 

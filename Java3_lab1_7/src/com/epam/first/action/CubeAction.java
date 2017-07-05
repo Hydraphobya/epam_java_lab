@@ -7,31 +7,34 @@ import com.epam.first.entity.Cube;
 import com.epam.first.entity.Point;
 import com.epam.first.entity.Ratio;
 
-//import org.apache.log4j.Logger;
-//import org.apache.log4j.xml.DOMConfigurator;
-//import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.log4j.LogManager;
 
 /**
  * @author Hanna_Hlushakova
  *
  */
 public class CubeAction{	
-	
-	//private static final Logger LOG = Logger.getLogger(CubeAction.class);
-	
-		//new DOMConfigurator().doConfigure("log4j.xml", LogManager.getLoggerRepository());
+	static {
+		new DOMConfigurator().doConfigure("log4j.xml", LogManager.getLoggerRepository());
+	}
+	static Logger logger = Logger.getLogger(CubeAction.class);
 	
 	public static boolean isCube(Point point, double sideLength){
+		logger.debug("Side length is: " + sideLength);
 		return (sideLength > 0);
 	}
 
 	public static double cubeArea(Cube cube){
-		double area = 6 * Math.pow(cube.getSideLength(), 2); 
+		double area = 6 * Math.pow(cube.getSideLength(), 2);
+		logger.info("The cube area is: " + area);
 		return area;
 	}
 	
 	public static double cubeVolume(Cube cube){
 		double volume = Math.pow(cube.getSideLength(), 3);
+		logger.info("The cube volume is: " + volume);
 		return volume;
 	}
 	
@@ -51,12 +54,13 @@ public class CubeAction{
 		else{
 			ratio = new Ratio(pos / sideLength, (neg * -1) / sideLength);
 		}	
-		
+		logger.info("The cube parts volume ratio is: " + ratio.toString());
 		return ratio;
 	}
 	
 	public static boolean isBaseOnCoordinatePlan(Cube cube){
 		double halfLength = cube.getSideLength() / 2;
+		logger.debug("The cube side half length is: " + halfLength);
 		return (Math.abs(cube.getCenter().getX()) == halfLength)
 					|| (Math.abs(cube.getCenter().getY()) == halfLength)
 					|| (Math.abs(cube.getCenter().getZ()) == halfLength);

@@ -13,7 +13,10 @@ import com.epam.first.entity.Point;
 import com.epam.first.entity.Ratio;
 
 import test.epam.first.testLogger.TestsRunner;
-
+/**
+ * @author Hanna_Hlushakova
+ *
+ */
 @RunWith(TestsRunner.class)
 public class CubeActionTest {
 	private static Cube cube; 

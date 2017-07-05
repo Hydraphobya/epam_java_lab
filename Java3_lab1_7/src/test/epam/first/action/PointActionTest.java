@@ -5,10 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import com.epam.first.action.PointAction;
 import com.epam.first.entity.Point;
 
+import test.epam.first.testLogger.TestsRunner;
+/**
+ * @author Hanna_Hlushakova
+ *
+ */
+@RunWith(TestsRunner.class)
 public class PointActionTest {
 	
 	private static Point point;  
