@@ -1,0 +1,5 @@
+10	Candy	Raffaello
+30	Other	Choco Nuts
+1	Bar	Chocolate
+1	Formed candy	Jelley beans
+4	Candy	Lollipop

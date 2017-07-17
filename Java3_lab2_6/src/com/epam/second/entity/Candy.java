@@ -1,28 +1,63 @@
 package com.epam.second.entity;
 
-enum CandyBase{
-	MILKCHOCO, DARKCHOCO, WHITECHOCO, 
-	COUVERTUREMILK, COUVERTUREDARK, COUVERTUREWHITE, 
-	PEANUT, MARSHMALLOW, GUMMY;
-	
-	@Override
-	public String toString(){
-		return "candy base - " + this.toString();
-	}
-}
+import java.util.Optional;
+
+import com.epam.second.enums.CandyBase;
+import com.epam.second.enums.SweetsCover;
+import com.epam.second.enums.SweetsFilling;
+import com.epam.second.exceptions.SweetsCoverException;
+import com.epam.second.exceptions.SweetsFillingException;
+
+
 
 public class Candy extends Sweets{
-	CandyBase candyBase;
+	private Optional<CandyBase> candyBase;
+	private Optional<SweetsFilling> filling;
+	private Optional<SweetsCover> cover;
 	
-	public Candy(String name, int sugarPercentage, double weight, double cost, CandyBase candyBase) {
+	public Candy(String name, int sugarPercentage, double weight, double cost, 
+					CandyBase candyBase, SweetsFilling filling, SweetsCover cover) {
 		super(name, sugarPercentage, weight, cost);
-		this.candyBase = candyBase;
+		this.candyBase = Optional.of(candyBase);
+		this.filling = Optional.ofNullable(filling);
+		this.cover = Optional.ofNullable(cover);
 	}
 	
+	public Candy(String name, int sugarPercentage, double weight, double cost, 
+			CandyBase candyBase) {
+	super(name, sugarPercentage, weight, cost);
+	this.candyBase = Optional.of(candyBase);
+	}
+
+	public void addSweetsCover(SweetsCover cover)  throws SweetsCoverException {
+		if (this.cover.isPresent()){
+			throw new SweetsCoverException("The sweets cann't be covered twice!"); 
+		}		
+		this.cover = Optional.ofNullable(cover);			
+	}
+	
+	public void addSweetsFilling(SweetsFilling filling) throws SweetsFillingException {
+		if (this.filling.isPresent()) { 
+			throw new SweetsFillingException("The sweets cann't be filled twice!");
+		}
+		this.filling = Optional.ofNullable(filling);
+	}
+
 	@Override 
 	public String toString(){
-		return super.toString()
-					+ ", "+ this.candyBase.toString();
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(", " + this.candyBase.toString());
+		this.filling.ifPresent(filling -> result.append(", " + filling.toString()));
+		this.cover.ifPresent(cover -> result.append(", " + cover.toString()));		
+		return result.toString();
+	}
+	
+	@Override
+	public int hashCode(){
+		return 100 * super.hashCode()
+				+ this.candyBase.get().hashCode()
+				+ 31 * this.filling.hashCode()
+				+ 15 * this.cover.hashCode();
 	}
 	
 	@Override 

@@ -1,7 +1,8 @@
 package com.epam.second.exceptions;
 
 public class SweetsCostException extends Exception {
-	private static final long serialVersionUID = 1L;
+
+	private static final long serialVersionUID = 9036935144743212483L;
 	public SweetsCostException(){	
 	}
 	public SweetsCostException(String message, Throwable exception){

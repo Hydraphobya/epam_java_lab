@@ -1,22 +1,24 @@
 package com.epam.second.entity;
 
+import java.util.Optional;
+
 import com.epam.second.exceptions.SweetsCostException;
 
 public class Sweets{
-	private String name;
+	private Optional<String> name;
 	private int sugarPercentage;
 	private double weight;
 	private double cost;
 	
-	public  Sweets(String name, int sugarPercentage, double weight, double cost){
-		this.name = name;
+	public Sweets(String name, int sugarPercentage, double weight, double cost){
+		this.name = Optional.of(name);
 		this.sugarPercentage = sugarPercentage;
 		this.weight = weight;
 		this.cost = cost;
 	}
 	
 	public String getName(){
-		return this.name;
+		return this.name.get();
 	}
 	
 	public int getSugarPercentage(){
@@ -67,6 +69,7 @@ public class Sweets{
 	@Override public int hashCode(){
 		return this.getName().hashCode() 
 					+ 31 * this.getSugarPercentage()
+					+ 15 * (int)(100 * this.getCost()) % 100
 					+ (int)(100 * this.getWeight()) % 100;
 	}
 	
