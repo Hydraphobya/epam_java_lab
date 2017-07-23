@@ -1,4 +1,4 @@
-package com.epam.second.exceptions;
+package com.epam.second.exception;
 
 public class SweetsCoverException extends Exception {
 	private static final long serialVersionUID = 5565839764933398720L;

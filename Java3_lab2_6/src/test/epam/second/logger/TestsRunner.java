@@ -1,4 +1,4 @@
-package test.epam.second.testLogger;
+package test.epam.second.logger;
 
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;

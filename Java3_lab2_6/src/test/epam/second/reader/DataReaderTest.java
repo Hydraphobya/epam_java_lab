@@ -5,8 +5,9 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 import com.epam.second.reader.DataReader;
 
+import test.epam.second.logger.TestsRunner;
+
 import java.util.List;
-import test.epam.second.testLogger.TestsRunner;
 /**
  * @author Hanna.Hlushakova
  *

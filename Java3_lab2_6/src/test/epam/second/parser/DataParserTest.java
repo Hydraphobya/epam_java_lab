@@ -1,14 +1,11 @@
 package test.epam.second.parser;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import com.epam.second.exceptions.DataParserException;
+import com.epam.second.exception.DataParserException;
 import com.epam.second.parser.DataParser;
-
-import test.epam.second.testLogger.TestsRunner;
+import test.epam.second.logger.TestsRunner;
 
 /**
  * @author Hanna.Hlushakova
@@ -19,25 +16,25 @@ public class DataParserTest {
 	@Test
 	public void parseStringTest() {
 		String str = "10	Candy	Raffaello";
-		double[] expected = new double[4];
-		expected[0] = 2.3;
-		expected[1] = -1;
-		expected[2] = 34;
+		String[] expected = new String[4];
+		expected[0] = "10";
+		expected[1] = "Candy";
+		expected[2] = "Raffaello";
 		try{
-		double[] actual = DataParser.parseStrig(str);
+		String[] actual = DataParser.parseStrig(str);
 		assertTrue(expected.length == actual.length 
-					&& expected[0] == actual[0]
-					&& expected[1] == actual[1]
-					&& expected[2] == actual[2]);}
+					&& expected[0].equals(actual[0])
+					&& expected[1].equals(actual[1])
+					&& expected[2].equals(actual[2]));}
 		catch(DataParserException e){
 			fail(e.getMessage());
 		}
 	}
 	@Test(expected = DataParserException.class)
 	public void parseFailTest() throws DataParserException{
-		String str = "2.3 -1d 3412";
+		String str = "2 Candy Raffaello";
 		int expected  = 4;
-		double[] parsedData = DataParser.parseStrig(str);
+		String[] parsedData = DataParser.parseStrig(str);
 		int actual = parsedData.length;
 		assertEquals("For string '" + str + "' should have thrown a DataParseException", expected, actual);
 	}

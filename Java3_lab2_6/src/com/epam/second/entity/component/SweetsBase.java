@@ -1,4 +1,4 @@
-package com.epam.second.enums;
+package com.epam.second.entity.component;
 
 public enum SweetsBase{ DRIED_FRUIT, CANDIED_FRUIT, CANDIED_VIOLET, NUT;
 	@Override

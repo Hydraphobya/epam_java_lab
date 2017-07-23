@@ -1,4 +1,4 @@
-package com.epam.second.exceptions;
+package com.epam.second.exception;
 
 public class SweetsFillingException extends Exception {
 

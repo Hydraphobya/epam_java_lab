@@ -2,9 +2,9 @@ package com.epam.second.factory;
 
 import com.epam.second.entity.OtherSweets;
 import com.epam.second.entity.Sweets;
-import com.epam.second.enums.SweetsBase;
-import com.epam.second.enums.SweetsCover;
-import com.epam.second.exceptions.IllegalSweetsTypeException;
+import com.epam.second.entity.component.SweetsBase;
+import com.epam.second.entity.component.SweetsCover;
+import com.epam.second.exception.IllegalSweetsTypeException;
 
 public class OtherSweetsFactory extends ConcreteSweetsFactory{
 

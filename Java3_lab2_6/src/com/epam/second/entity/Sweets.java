@@ -2,9 +2,9 @@ package com.epam.second.entity;
 
 import java.util.Optional;
 
-import com.epam.second.exceptions.SweetsCostException;
+import com.epam.second.exception.SweetsCostException;
 
-public class Sweets{
+public  abstract class Sweets{
 	private Optional<String> name;
 	private int sugarPercentage;
 	private double weight;

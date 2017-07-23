@@ -2,11 +2,11 @@ package com.epam.second.entity;
 
 import java.util.Optional;
 
-import com.epam.second.enums.CandyBase;
-import com.epam.second.enums.SweetsCover;
-import com.epam.second.enums.SweetsFilling;
-import com.epam.second.exceptions.SweetsCoverException;
-import com.epam.second.exceptions.SweetsFillingException;
+import com.epam.second.entity.component.CandyBase;
+import com.epam.second.entity.component.SweetsCover;
+import com.epam.second.entity.component.SweetsFilling;
+import com.epam.second.exception.SweetsCoverException;
+import com.epam.second.exception.SweetsFillingException;
 
 
 

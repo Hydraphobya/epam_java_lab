@@ -2,9 +2,9 @@ package com.epam.second.entity;
 
 import java.util.Optional;
 
-import com.epam.second.enums.SweetsBase;
-import com.epam.second.enums.SweetsCover;
-import com.epam.second.exceptions.SweetsCoverException;
+import com.epam.second.entity.component.SweetsBase;
+import com.epam.second.entity.component.SweetsCover;
+import com.epam.second.exception.SweetsCoverException;
 
 
 public class OtherSweets extends Sweets {

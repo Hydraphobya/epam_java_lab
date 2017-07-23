@@ -1,7 +1,7 @@
 package com.epam.second.factory;
 
 import com.epam.second.entity.Sweets;
-import com.epam.second.exceptions.IllegalSweetsTypeException;
+import com.epam.second.exception.IllegalSweetsTypeException;
 
 public abstract class ConcreteSweetsFactory {
 

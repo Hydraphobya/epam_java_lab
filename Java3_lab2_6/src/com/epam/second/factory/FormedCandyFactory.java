@@ -2,8 +2,8 @@ package com.epam.second.factory;
 
 import com.epam.second.entity.FormedCandy;
 import com.epam.second.entity.Sweets;
-import com.epam.second.enums.CandyBase;
-import com.epam.second.exceptions.IllegalSweetsTypeException;
+import com.epam.second.entity.component.CandyBase;
+import com.epam.second.exception.IllegalSweetsTypeException;
 
 public class FormedCandyFactory extends ConcreteSweetsFactory{
 

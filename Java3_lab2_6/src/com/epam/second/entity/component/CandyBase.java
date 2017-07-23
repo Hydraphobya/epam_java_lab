@@ -1,4 +1,4 @@
-package com.epam.second.enums;
+package com.epam.second.entity.component;
 
 public enum CandyBase{
 	MILKCHOCO, DARKCHOCO, WHITECHOCO, 

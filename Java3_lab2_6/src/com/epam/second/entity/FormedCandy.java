@@ -2,9 +2,9 @@ package com.epam.second.entity;
 
 import java.util.Optional;
 
-import com.epam.second.enums.CandyBase;
-import com.epam.second.enums.SweetsCover;
-import com.epam.second.enums.SweetsFilling;
+import com.epam.second.entity.component.CandyBase;
+import com.epam.second.entity.component.SweetsCover;
+import com.epam.second.entity.component.SweetsFilling;
 
 public class FormedCandy extends Candy {
 	private Optional<String> form;
